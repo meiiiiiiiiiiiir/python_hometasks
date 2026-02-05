@@ -34,4 +34,25 @@ string_function=lambda text: " ".join([
     if not any(char.isdigit() for char in word)
     if len(word)%2==0
 ])
-
+#3
+def top_k_words(text,k):
+    text=text.lower()
+    clean_text=""
+    for char in text:
+        if char.isalpha() or char==" ":
+            clean_text+=char
+        else:
+            clean_text+=" "
+    words=clean_text.split()
+    counts={}
+    for word in words:
+        if word in counts:
+            counts[word]+=1
+        else:
+            counts[word]=1
+    items=list(counts.items())
+    items.sort(key=lambda x: (-x[1], x[0] ))
+    result=[]
+    for i in range(min(k,len(items))):
+        result.append(items[i][0])
+    return result
