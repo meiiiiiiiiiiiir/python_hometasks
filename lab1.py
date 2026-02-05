@@ -29,7 +29,4 @@ def analyze_text(text):
     final_result=" ".join(result)
     return count,final_result
 
-
-text1="Level, radar! Hello world. Stats starts, level..."
-result=analyze_text(text1)
-print(result)
+#2
