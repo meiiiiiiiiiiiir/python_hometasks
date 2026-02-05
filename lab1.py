@@ -28,5 +28,10 @@ def analyze_text(text):
                     seen_words.append(word_lower)
     final_result=" ".join(result)
     return count,final_result
-
 #2
+string_function=lambda text: " ".join([
+    word[::-1] for word in text.split()
+    if not any(char.isdigit() for char in word)
+    if len(word)%2==0
+])
+
