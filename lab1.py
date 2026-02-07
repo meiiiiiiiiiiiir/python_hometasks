@@ -56,3 +56,4 @@ def top_k_words(text,k):
     for i in range(min(k,len(items))):
         result.append(items[i][0])
     return result
+#4
